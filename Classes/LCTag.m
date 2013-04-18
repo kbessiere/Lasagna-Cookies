@@ -36,13 +36,26 @@
     self.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
     [self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, 27)];
     self.titleLabel.font = [UIFont boldSystemFontOfSize:13];
-    NSString* buttonImageText = @"LasagnaCookiesBundle.bundle/tag";
-    UIImage *buttonImage = [[UIImage imageNamed:buttonImageText] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 18)];
+ 
+    
+    NSString* tagImageName = @"lctag";
+    if (![self isOnBundle])
+    {
+        tagImageName = @"LasagnaCookiesBundle.bundle/lctag";
+    }
+    
+    UIImage * buttonImage = [[UIImage imageNamed:tagImageName] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 18)];
     [self setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [self setBackgroundImage:buttonImage forState:UIControlStateHighlighted];
     [self setTitleColor:[UIColor colorWithRed:154/255.f green:154/255.f blue:154/255.f alpha:1] forState:UIControlStateNormal];
      [self setTitleColor:[UIColor colorWithRed:154/255.f green:154/255.f blue:154/255.f alpha:1] forState:UIControlStateHighlighted];
 }
 
+- (BOOL)isOnBundle
+{
+    if ([UIImage imageNamed:@"lcbutton"])
+        return NO;
+    return YES;
+}
 
 @end

@@ -33,8 +33,13 @@
 
 - (void)setup
 {
-    NSString* buttonImageText = @"LasagnaCookiesBundle.bundle/button";
-    NSString* buttonImageHighlightText = @"LasagnaCookiesBundle.bundle/button-highlighted";
+    NSString* buttonImageText = @"lcbutton";
+    NSString* buttonImageHighlightText = @"lcbutton-highlighted";
+    if (![self isOnBundle])
+    {
+        buttonImageText = @"LasagnaCookiesBundle.bundle/lcbutton";
+        buttonImageHighlightText = @"LasagnaCookiesBundle.bundle/lcbutton-highlighted";
+    }
     UIImage *buttonImage = [[UIImage imageNamed:buttonImageText] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 5, 15, 5)];
     UIImage *buttonImageHighlight = [[UIImage imageNamed:buttonImageHighlightText] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 5, 15, 5)];
     [self setBackgroundImage:buttonImage forState:UIControlStateNormal];
@@ -48,5 +53,13 @@
     [self setTitleShadowColor:[[UIColor blackColor] colorWithAlphaComponent:0.36] forState:UIControlStateHighlighted];
     self.titleLabel.shadowOffset = CGSizeMake(0, -1);
 }
+
+- (BOOL)isOnBundle
+{
+    if ([UIImage imageNamed:@"lcbutton"])
+        return NO;
+    return YES;
+}
+
 
 @end

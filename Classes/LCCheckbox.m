@@ -33,11 +33,16 @@
 {
     [self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, 24, 24)];
 
-    NSString * selectedText = @"LasagnaCookiesBundle.bundle/checkbox-selected";
-    NSString * unselectedText = @"LasagnaCookiesBundle.bundle/checkbox-unselected";
+    NSString* selectedImageName = @"lccheckbox-selected";
+    NSString* unselectedImageName = @"lccheckbox-unselected";
+    if (![self isOnBundle])
+    {
+        selectedImageName = @"LasagnaCookiesBundle.bundle/lccheckbox-selected";
+        unselectedImageName = @"LasagnaCookiesBundle.bundle/lccheckbox-unselected";
+    }
     
-    UIImage * selectedImage = [UIImage imageNamed:selectedText];
-    UIImage * unselectedImage = [UIImage imageNamed:unselectedText];
+    UIImage * selectedImage = [UIImage imageNamed:selectedImageName];
+    UIImage * unselectedImage = [UIImage imageNamed:unselectedImageName];
     
     [self setBackgroundImage:selectedImage forState:UIControlStateSelected];
     [self setBackgroundImage:selectedImage forState:UIControlStateHighlighted];
@@ -50,5 +55,13 @@
 {
     self.selected = !self.selected;
 }
+
+- (BOOL)isOnBundle
+{
+    if ([UIImage imageNamed:@"lcbutton"])
+        return NO;
+    return YES;
+}
+
 
 @end

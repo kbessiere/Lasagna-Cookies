@@ -42,8 +42,14 @@
     CGRect frame = self.frame;
     frame.size.height += 10;
     self.frame = frame;
-    NSString* buttonImageText = @"LasagnaCookiesBundle.bundle/textfield";
-    UIImage *buttonImage = [[UIImage imageNamed:buttonImageText] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)];
+
+    NSString* textFieldImageName = @"lctextfield";
+    if (![self isOnBundle])
+    {
+        textFieldImageName = @"LasagnaCookiesBundle.bundle/lctextfield";
+    }
+    
+    UIImage *buttonImage = [[UIImage imageNamed:textFieldImageName] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)];
     [self setBackground:buttonImage];
     [self setBorderStyle:UITextBorderStyleNone];
     self.textColor = [UIColor colorWithRed:245/255.f green:122/255.f blue:89/255.f alpha:1];
@@ -64,6 +70,13 @@
 - (void)doneWithKeyboard
 {
     [self resignFirstResponder];
+}
+
+- (BOOL)isOnBundle
+{
+    if ([UIImage imageNamed:@"lcbutton"])
+        return NO;
+    return YES;
 }
 
 @end
