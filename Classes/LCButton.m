@@ -35,7 +35,7 @@
 {
     NSString* buttonImageText = @"lcbutton";
     NSString* buttonImageHighlightText = @"lcbutton-highlighted";
-    if (![self isOnBundle])
+    if (![self isOnProjectResources])
     {
         buttonImageText = @"LasagnaCookiesBundle.bundle/lcbutton";
         buttonImageHighlightText = @"LasagnaCookiesBundle.bundle/lcbutton-highlighted";
@@ -54,11 +54,11 @@
     self.titleLabel.shadowOffset = CGSizeMake(0, -1);
 }
 
-- (BOOL)isOnBundle
+- (BOOL)isOnProjectResources
 {
     if ([UIImage imageNamed:@"lcbutton"])
-        return NO;
-    return YES;
+        return YES;
+    return NO;
 }
 
 

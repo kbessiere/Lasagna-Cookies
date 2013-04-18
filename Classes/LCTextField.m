@@ -44,7 +44,7 @@
     self.frame = frame;
 
     NSString* textFieldImageName = @"lctextfield";
-    if (![self isOnBundle])
+    if (![self isOnProjectResources])
     {
         textFieldImageName = @"LasagnaCookiesBundle.bundle/lctextfield";
     }
@@ -72,11 +72,11 @@
     [self resignFirstResponder];
 }
 
-- (BOOL)isOnBundle
+- (BOOL)isOnProjectResources
 {
     if ([UIImage imageNamed:@"lcbutton"])
-        return NO;
-    return YES;
+        return YES;
+    return NO;
 }
 
 @end

@@ -19,22 +19,6 @@
 		3C8B5CCC171F0E58008FBB9D /* LCTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8B5CC6171F0E58008FBB9D /* LCTag.m */; };
 		3C8B5CCD171F0E58008FBB9D /* LCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8B5CC8171F0E58008FBB9D /* LCTextField.m */; };
 		3C8B5D17171F1853008FBB9D /* LCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8B5CA7171F0DCF008FBB9D /* LCViewController.xib */; };
-		3C9AB71C171FDFC000A725E3 /* lctextfield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB70C171FDFC000A725E3 /* lctextfield@2x.png */; };
-		3C9AB71D171FDFC000A725E3 /* lctextfield.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB70D171FDFC000A725E3 /* lctextfield.png */; };
-		3C9AB71E171FDFC000A725E3 /* lctag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB70E171FDFC000A725E3 /* lctag@2x.png */; };
-		3C9AB71F171FDFC000A725E3 /* lctag.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB70F171FDFC000A725E3 /* lctag.png */; };
-		3C9AB720171FDFC000A725E3 /* lcradio-unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB710171FDFC000A725E3 /* lcradio-unselected@2x.png */; };
-		3C9AB721171FDFC000A725E3 /* lcradio-unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB711171FDFC000A725E3 /* lcradio-unselected.png */; };
-		3C9AB722171FDFC000A725E3 /* lcradio-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB712171FDFC000A725E3 /* lcradio-selected@2x.png */; };
-		3C9AB723171FDFC000A725E3 /* lcradio-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB713171FDFC000A725E3 /* lcradio-selected.png */; };
-		3C9AB724171FDFC000A725E3 /* lccheckbox-unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB714171FDFC000A725E3 /* lccheckbox-unselected@2x.png */; };
-		3C9AB725171FDFC000A725E3 /* lccheckbox-unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB715171FDFC000A725E3 /* lccheckbox-unselected.png */; };
-		3C9AB726171FDFC000A725E3 /* lccheckbox-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB716171FDFC000A725E3 /* lccheckbox-selected@2x.png */; };
-		3C9AB727171FDFC000A725E3 /* lccheckbox-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB717171FDFC000A725E3 /* lccheckbox-selected.png */; };
-		3C9AB728171FDFC000A725E3 /* lcbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB718171FDFC000A725E3 /* lcbutton@2x.png */; };
-		3C9AB729171FDFC000A725E3 /* lcbutton-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB719171FDFC000A725E3 /* lcbutton-highlighted@2x.png */; };
-		3C9AB72A171FDFC000A725E3 /* lcbutton-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB71A171FDFC000A725E3 /* lcbutton-highlighted.png */; };
-		3C9AB72B171FDFC000A725E3 /* lcbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB71B171FDFC000A725E3 /* lcbutton.png */; };
 		3C9AB72C171FE37E00A725E3 /* lctextfield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB70C171FDFC000A725E3 /* lctextfield@2x.png */; };
 		3C9AB72D171FE37E00A725E3 /* lctextfield.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB70D171FDFC000A725E3 /* lctextfield.png */; };
 		3C9AB72E171FE37E00A725E3 /* lctag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB70E171FDFC000A725E3 /* lctag@2x.png */; };
@@ -52,6 +36,16 @@
 		3C9AB73A171FE37E00A725E3 /* lcbutton-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB71A171FDFC000A725E3 /* lcbutton-highlighted.png */; };
 		3C9AB73B171FE37E00A725E3 /* lcbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB71B171FDFC000A725E3 /* lcbutton.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3C9AB76B171FE7EE00A725E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C8B5C81171F0DCF008FBB9D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C8B5CF2171F1116008FBB9D;
+			remoteInfo = LasagnaCookiesBundle;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3C8B5C89171F0DCF008FBB9D /* LasagnaCookies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LasagnaCookies.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,6 +249,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3C9AB76C171FE7EE00A725E3 /* PBXTargetDependency */,
 			);
 			name = LasagnaCookies;
 			productName = LasagnaCookies;
@@ -312,22 +307,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C8B5D17171F1853008FBB9D /* LCViewController.xib in Resources */,
-				3C9AB71C171FDFC000A725E3 /* lctextfield@2x.png in Resources */,
-				3C9AB71D171FDFC000A725E3 /* lctextfield.png in Resources */,
-				3C9AB71E171FDFC000A725E3 /* lctag@2x.png in Resources */,
-				3C9AB71F171FDFC000A725E3 /* lctag.png in Resources */,
-				3C9AB720171FDFC000A725E3 /* lcradio-unselected@2x.png in Resources */,
-				3C9AB721171FDFC000A725E3 /* lcradio-unselected.png in Resources */,
-				3C9AB722171FDFC000A725E3 /* lcradio-selected@2x.png in Resources */,
-				3C9AB723171FDFC000A725E3 /* lcradio-selected.png in Resources */,
-				3C9AB724171FDFC000A725E3 /* lccheckbox-unselected@2x.png in Resources */,
-				3C9AB725171FDFC000A725E3 /* lccheckbox-unselected.png in Resources */,
-				3C9AB726171FDFC000A725E3 /* lccheckbox-selected@2x.png in Resources */,
-				3C9AB727171FDFC000A725E3 /* lccheckbox-selected.png in Resources */,
-				3C9AB728171FDFC000A725E3 /* lcbutton@2x.png in Resources */,
-				3C9AB729171FDFC000A725E3 /* lcbutton-highlighted@2x.png in Resources */,
-				3C9AB72A171FDFC000A725E3 /* lcbutton-highlighted.png in Resources */,
-				3C9AB72B171FDFC000A725E3 /* lcbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +359,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3C9AB76C171FE7EE00A725E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C8B5CF2171F1116008FBB9D /* LasagnaCookiesBundle */;
+			targetProxy = 3C9AB76B171FE7EE00A725E3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3C8B5C95171F0DCF008FBB9D /* InfoPlist.strings */ = {

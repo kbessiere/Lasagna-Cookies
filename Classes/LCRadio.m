@@ -36,7 +36,7 @@
 
     NSString* selectedImageName = @"lcradio-selected";
     NSString* unselectedImageName = @"lcradio-unselected";
-    if (![self isOnBundle])
+    if (![self isOnProjectResources])
     {
         selectedImageName = @"LasagnaCookiesBundle.bundle/lcradio-selected";
         unselectedImageName = @"LasagnaCookiesBundle.bundle/lcradio-unselected";
@@ -57,11 +57,11 @@
     self.selected = !self.selected;
 }
 
-- (BOOL)isOnBundle
+- (BOOL)isOnProjectResources
 {
     if ([UIImage imageNamed:@"lcbutton"])
-        return NO;
-    return YES;
+        return YES;
+    return NO;
 }
 
 @end

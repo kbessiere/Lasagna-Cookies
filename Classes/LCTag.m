@@ -39,7 +39,7 @@
  
     
     NSString* tagImageName = @"lctag";
-    if (![self isOnBundle])
+    if (![self isOnProjectResources])
     {
         tagImageName = @"LasagnaCookiesBundle.bundle/lctag";
     }
@@ -51,11 +51,11 @@
      [self setTitleColor:[UIColor colorWithRed:154/255.f green:154/255.f blue:154/255.f alpha:1] forState:UIControlStateHighlighted];
 }
 
-- (BOOL)isOnBundle
+- (BOOL)isOnProjectResources
 {
     if ([UIImage imageNamed:@"lcbutton"])
-        return NO;
-    return YES;
+        return YES;
+    return NO;
 }
 
 @end

@@ -35,7 +35,7 @@
 
     NSString* selectedImageName = @"lccheckbox-selected";
     NSString* unselectedImageName = @"lccheckbox-unselected";
-    if (![self isOnBundle])
+    if (![self isOnProjectResources])
     {
         selectedImageName = @"LasagnaCookiesBundle.bundle/lccheckbox-selected";
         unselectedImageName = @"LasagnaCookiesBundle.bundle/lccheckbox-unselected";
@@ -56,12 +56,11 @@
     self.selected = !self.selected;
 }
 
-- (BOOL)isOnBundle
+- (BOOL)isOnProjectResources
 {
     if ([UIImage imageNamed:@"lcbutton"])
-        return NO;
-    return YES;
+        return YES;
+    return NO;
 }
-
 
 @end
