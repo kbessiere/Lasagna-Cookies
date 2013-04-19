@@ -7,6 +7,7 @@
 //
 
 #import "LCViewController.h"
+#import "UIColor+hex.h"
 
 @interface LCViewController ()
 
@@ -17,7 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	button.mainColor = [UIColor colorWithRed:100/255.f green:100/255.f blue:100/255.f alpha:1];
+	button.mainColor = [UIColor colorWithHexa:0xFF00];
 }
 
 - (void)didReceiveMemoryWarning

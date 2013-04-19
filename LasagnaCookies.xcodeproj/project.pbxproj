@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C7491DE1721DC51004F4DFA /* UIColor+hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7491DD1721DC51004F4DFA /* UIColor+hex.m */; };
 		3C8B5C8D171F0DCF008FBB9D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8B5C8C171F0DCF008FBB9D /* UIKit.framework */; };
 		3C8B5C8F171F0DCF008FBB9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8B5C8E171F0DCF008FBB9D /* Foundation.framework */; };
 		3C8B5C91171F0DCF008FBB9D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8B5C90171F0DCF008FBB9D /* CoreGraphics.framework */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C7491DC1721DC51004F4DFA /* UIColor+hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+hex.h"; path = "Classes/UIColor+hex.h"; sourceTree = SOURCE_ROOT; };
+		3C7491DD1721DC51004F4DFA /* UIColor+hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+hex.m"; path = "Classes/UIColor+hex.m"; sourceTree = SOURCE_ROOT; };
 		3C8B5C89171F0DCF008FBB9D /* LasagnaCookies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LasagnaCookies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C8B5C8C171F0DCF008FBB9D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3C8B5C8E171F0DCF008FBB9D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -159,6 +162,8 @@
 				3C8B5CA5171F0DCF008FBB9D /* LCViewController.m */,
 				3C8B5CA7171F0DCF008FBB9D /* LCViewController.xib */,
 				3C8B5C93171F0DCF008FBB9D /* Supporting Files */,
+				3C7491DC1721DC51004F4DFA /* UIColor+hex.h */,
+				3C7491DD1721DC51004F4DFA /* UIColor+hex.m */,
 			);
 			path = LasagnaCookies;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 				3C8B5CCB171F0E58008FBB9D /* LCRadio.m in Sources */,
 				3C8B5CCC171F0E58008FBB9D /* LCTag.m in Sources */,
 				3C8B5CCD171F0E58008FBB9D /* LCTextField.m in Sources */,
+				3C7491DE1721DC51004F4DFA /* UIColor+hex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
