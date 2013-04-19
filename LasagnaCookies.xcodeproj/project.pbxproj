@@ -121,6 +121,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C7491DF1721FE3F004F4DFA /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3C7491DC1721DC51004F4DFA /* UIColor+hex.h */,
+				3C7491DD1721DC51004F4DFA /* UIColor+hex.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		3C8B5C80171F0DCF008FBB9D = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +163,7 @@
 		3C8B5C92171F0DCF008FBB9D /* LasagnaCookies */ = {
 			isa = PBXGroup;
 			children = (
+				3C7491DF1721FE3F004F4DFA /* Categories */,
 				3C8B5CCE171F0E5E008FBB9D /* Ressources */,
 				3C8B5CAF171F0DD8008FBB9D /* Classes */,
 				3C8B5C9B171F0DCF008FBB9D /* LCAppDelegate.h */,
@@ -162,8 +172,6 @@
 				3C8B5CA5171F0DCF008FBB9D /* LCViewController.m */,
 				3C8B5CA7171F0DCF008FBB9D /* LCViewController.xib */,
 				3C8B5C93171F0DCF008FBB9D /* Supporting Files */,
-				3C7491DC1721DC51004F4DFA /* UIColor+hex.h */,
-				3C7491DD1721DC51004F4DFA /* UIColor+hex.m */,
 			);
 			path = LasagnaCookies;
 			sourceTree = "<group>";

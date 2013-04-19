@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "LCButton.h"
+#import "LCCheckbox.h"
+#import "LCRadio.h"
 
 @interface LCViewController : UIViewController
 {
     IBOutlet LCButton * button;
+    IBOutlet LCRadio * checkbox;
 }
 
 

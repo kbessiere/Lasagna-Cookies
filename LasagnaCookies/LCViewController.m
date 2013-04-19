@@ -18,7 +18,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	button.mainColor = [UIColor colorWithHexa:0xFF00];
+	button.mainColor = [UIColor colorWithHexa:0xAE1215];
+    checkbox.mainColor = [UIColor colorWithHexa:0x97CCEE];
 }
 
 - (void)didReceiveMemoryWarning
