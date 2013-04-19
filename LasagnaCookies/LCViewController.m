@@ -17,7 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	button.mainColor = [UIColor colorWithRed:100/255.f green:100/255.f blue:100/255.f alpha:1];
 }
 
 - (void)didReceiveMemoryWarning

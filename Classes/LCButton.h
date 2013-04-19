@@ -10,4 +10,6 @@
 
 @interface LCButton : UIButton
 
+@property (nonatomic, strong) UIColor * mainColor;
+
 @end

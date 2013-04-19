@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LCButton.h"
 
 @interface LCViewController : UIViewController
+{
+    IBOutlet LCButton * button;
+}
+
+
 
 @end
