@@ -46,12 +46,7 @@
 {
     [self initColors];
     [self addObserver:self forKeyPath:@"highlighted" options:NSKeyValueObservingOptionNew context:NULL];
-
-//    [self setBackgroundImage:selectedImage forState:UIControlStateSelected];
-//    [self setBackgroundImage:selectedImage forState:UIControlStateHighlighted];
-//    [self setBackgroundImage:unselectedImage forState:UIControlStateNormal];
     [self addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchDown];
-//    self.titleLabel.text = @"";
 }
 
 - (void)select:(id)sender
@@ -109,7 +104,6 @@
     CGContextSetStrokeColorWithColor(context, self.unckeckedColor.CGColor);
     CGContextStrokeEllipseInRect(context, newRect);
     
-    
     if (self.isSelected)
     {
         CGRect centerCircle = CGRectMake(rect.origin.x + 5, rect.origin.y + 5, rect.size.width - 10, rect.size.height - 10);
@@ -121,6 +115,18 @@
         CGContextSetStrokeColorWithColor(context, self.stroke.CGColor);
         CGContextStrokeEllipseInRect(context, centerCircle);
     }
+    if (self.highlighted)
+    {
+        CGRect centerCircle = CGRectMake(rect.origin.x + 5, rect.origin.y + 5, rect.size.width - 10, rect.size.height - 10);
+        CGContextSetFillColorWithColor(context, self.highlightedColor.CGColor);
+        CGContextSetAlpha(context, 1);
+        CGContextFillEllipseInRect(context, centerCircle);
+        
+        CGContextSetLineWidth(context, 1.5);
+        CGContextSetStrokeColorWithColor(context, self.stroke.CGColor);
+        CGContextStrokeEllipseInRect(context, centerCircle);
+    }
+
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
