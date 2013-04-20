@@ -15,7 +15,6 @@
 @property (nonatomic, strong) UIColor * stroke;
 @property (nonatomic, strong) UIColor * highlightedColor;
 
-
 @property (nonatomic, strong) UIColor * unckeckedColor;
 
 @end
@@ -126,7 +125,6 @@
         CGContextSetStrokeColorWithColor(context, self.stroke.CGColor);
         CGContextStrokeEllipseInRect(context, centerCircle);
     }
-
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context

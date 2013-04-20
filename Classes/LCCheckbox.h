@@ -10,4 +10,6 @@
 
 @interface LCCheckbox : UIButton
 
+@property (strong, nonatomic) UIColor * mainColor;
+
 @end

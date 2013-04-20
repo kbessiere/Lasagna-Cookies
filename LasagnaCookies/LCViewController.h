@@ -14,10 +14,18 @@
 @interface LCViewController : UIViewController
 {
     IBOutlet LCButton * button;
-    IBOutlet LCRadio * checkbox1;
-    IBOutlet LCRadio * checkbox2;
-    IBOutlet LCRadio * checkbox3;
-    IBOutlet LCRadio * checkbox4;
+ 
+    IBOutlet LCRadio * radio1;
+    IBOutlet LCRadio * radio2;
+    IBOutlet LCRadio * radio3;
+    IBOutlet LCRadio * radio4;
+    
+    IBOutlet LCCheckbox * checkbox1;
+    IBOutlet LCCheckbox * checkbox2;
+    IBOutlet LCCheckbox * checkbox3;
+    IBOutlet LCCheckbox * checkbox4;
+
+    
 }
 
 

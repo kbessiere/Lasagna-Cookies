@@ -19,6 +19,12 @@
 {
     [super viewDidLoad];
 	button.mainColor = [UIColor colorWithHexa:0xAE1215];
+
+    radio1.mainColor = [UIColor colorWithHexa:0x97CCEE];
+    radio2.mainColor = [UIColor colorWithHexa:0xD31996];
+    radio3.mainColor = [UIColor colorWithHexa:0x708D91];
+    radio4.mainColor = [UIColor colorWithHexa:0x19DD89];
+    
     checkbox1.mainColor = [UIColor colorWithHexa:0x97CCEE];
     checkbox2.mainColor = [UIColor colorWithHexa:0xD31996];
     checkbox3.mainColor = [UIColor colorWithHexa:0x708D91];
