@@ -10,4 +10,6 @@
 
 @interface LCTextField : UITextField
 
+@property (strong, nonatomic) UIColor * mainColor;
+
 @end
