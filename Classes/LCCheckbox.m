@@ -22,8 +22,9 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
+    if (self)
+    {
+        [self setup];
     }
     return self;
 }
@@ -82,40 +83,53 @@
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGRect newRect = CGRectMake(rect.origin.x + 1, rect.origin.y + 1, rect.size.width - 2, rect.size.height - 2);
-    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
-    CGContextSetAlpha(context, 1);
-    CGContextFillRect(context, rect);
-    
-    
-    
-    CGContextSetLineWidth(context, 1.6);
-    CGContextSetStrokeColorWithColor(context, self.unckeckedColor.CGColor);
-    CGContextStrokeRect(context, newRect);
     
     if (self.isSelected)
     {
-        CGRect rectCenter = CGRectMake(rect.origin.x + 5, rect.origin.y + 5, rect.size.width - 10, rect.size.height - 10);
         CGContextSetFillColorWithColor(context, self.mainColor.CGColor);
         CGContextSetAlpha(context, 1);
-        CGContextFillRect(context, rectCenter);
+        CGContextFillRect(context, rect);
         
         CGContextSetLineWidth(context, 1.5);
         CGContextSetStrokeColorWithColor(context, self.stroke.CGColor);
-        CGContextStrokeRect(context, rectCenter);
+        CGContextStrokeRect(context, rect);
+        [self drawValidateSymbole:context inRect:rect];
     }
-    if (self.highlighted)
+    else if (self.highlighted)
     {
-        CGRect rectCenter = CGRectMake(rect.origin.x + 5, rect.origin.y + 5, rect.size.width - 10, rect.size.height - 10);
         CGContextSetFillColorWithColor(context, self.highlightedColor.CGColor);
         CGContextSetAlpha(context, 1);
-        CGContextFillRect(context, rectCenter);
+        CGContextFillRect(context, rect);
         
         CGContextSetLineWidth(context, 1.5);
         CGContextSetStrokeColorWithColor(context, self.stroke.CGColor);
-        CGContextStrokeRect(context, rectCenter);
+        CGContextStrokeRect(context, rect);
+    }
+    else
+    {
+        CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
+        CGContextSetAlpha(context, 1);
+        CGContextFillRect(context, rect);
+        CGContextSetLineWidth(context, 1.6);
+        CGContextSetStrokeColorWithColor(context, self.unckeckedColor.CGColor);
+        CGContextStrokeRect(context, rect);
     }
     CGContextFillPath(context);
+}
+
+- (void)drawValidateSymbole:(CGContextRef)context inRect:(CGRect)rect
+{
+    CGContextSetLineWidth(context, (int)(CGRectGetWidth(rect) / 10));
+    
+    CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
+
+    CGContextMoveToPoint(context, CGRectGetWidth(rect) * 0.40f, CGRectGetHeight(rect) * 0.71f);
+    CGContextAddLineToPoint(context, CGRectGetWidth(rect) * 0.79f, CGRectGetHeight(rect) * 0.28f);
+
+    CGContextMoveToPoint(context, CGRectGetWidth(rect) * 0.44f, CGRectGetHeight(rect) * 0.74f);
+    CGContextAddLineToPoint(context, CGRectGetWidth(rect) * 0.20f, CGRectGetHeight(rect) * 0.56f);
+    
+    CGContextStrokePath(context);
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
