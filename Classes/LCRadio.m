@@ -97,26 +97,27 @@
     CGContextSetAlpha(context, 1);
     CGContextFillEllipseInRect(context, rect);
 
-
     
-    CGContextSetLineWidth(context, 1.6);
+    CGContextSetLineWidth(context, CGRectGetWidth(newRect) / 20);
     CGContextSetStrokeColorWithColor(context, self.unckeckedColor.CGColor);
     CGContextStrokeEllipseInRect(context, newRect);
     
+    float margin =  CGRectGetWidth(newRect) / 5.5f;
+    
     if (self.isSelected)
     {
-        CGRect centerCircle = CGRectMake(rect.origin.x + 5, rect.origin.y + 5, rect.size.width - 10, rect.size.height - 10);
+        CGRect centerCircle = CGRectMake(rect.origin.x + margin, rect.origin.y + margin, rect.size.width - (margin * 2), rect.size.height - margin * 2);
         CGContextSetFillColorWithColor(context, self.mainColor.CGColor);
         CGContextSetAlpha(context, 1);
         CGContextFillEllipseInRect(context, centerCircle);
         
-        CGContextSetLineWidth(context, 1.5);
+        CGContextSetLineWidth(context, CGRectGetWidth(newRect) / 20);
         CGContextSetStrokeColorWithColor(context, self.stroke.CGColor);
         CGContextStrokeEllipseInRect(context, centerCircle);
     }
     if (self.highlighted)
     {
-        CGRect centerCircle = CGRectMake(rect.origin.x + 5, rect.origin.y + 5, rect.size.width - 10, rect.size.height - 10);
+        CGRect centerCircle = CGRectMake(rect.origin.x + margin, rect.origin.y + margin, rect.size.width - (margin * 2), rect.size.height - margin * 2);
         CGContextSetFillColorWithColor(context, self.highlightedColor.CGColor);
         CGContextSetAlpha(context, 1);
         CGContextFillEllipseInRect(context, centerCircle);

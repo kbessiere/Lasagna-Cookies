@@ -90,7 +90,7 @@
         CGContextSetAlpha(context, 1);
         CGContextFillRect(context, rect);
 
-        CGContextSetLineWidth(context, 3);
+        CGContextSetLineWidth(context, CGRectGetWidth(rect) / 10);
         CGContextSetStrokeColorWithColor(context, self.stroke.CGColor);
         CGContextStrokeRect(context, rect);
         [self drawValidateSymbole:context inRect:rect];
@@ -101,9 +101,10 @@
         CGContextSetAlpha(context, 1);
         CGContextFillRect(context, rect);
         
-        CGContextSetLineWidth(context, 3);
+        CGContextSetLineWidth(context, CGRectGetWidth(rect) / 10);
         CGContextSetStrokeColorWithColor(context, self.stroke.CGColor);
         CGContextStrokeRect(context, rect);
+        [self drawValidateSymbole:context inRect:rect];
     }
     else
     {
@@ -111,7 +112,7 @@
         CGContextSetAlpha(context, 1);
         CGContextFillRect(context, rect);
 
-        CGContextSetLineWidth(context, 3);
+        CGContextSetLineWidth(context, CGRectGetWidth(rect) / 10);
         CGContextSetStrokeColorWithColor(context, self.unckeckedColor.CGColor);
         CGContextStrokeRect(context, rect);
     }
@@ -120,7 +121,7 @@
 
 - (void)drawValidateSymbole:(CGContextRef)context inRect:(CGRect)rect
 {
-    CGContextSetLineWidth(context, (int)(CGRectGetWidth(rect) / 10));
+    CGContextSetLineWidth(context, CGRectGetWidth(rect) / 10);
     
     CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
 
