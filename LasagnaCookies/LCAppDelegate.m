@@ -7,7 +7,7 @@
 //
 
 #import "LCAppDelegate.h"
-
+#import "LCManager.h"
 #import "LCViewController.h"
 
 @implementation LCAppDelegate

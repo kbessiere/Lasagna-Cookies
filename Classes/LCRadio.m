@@ -7,6 +7,19 @@
 //
 
 #import "LCRadio.h"
+#import "UIColor+hex.h"
+#import "LCManager.h"
+#import "UIColor+hex.h"
+
+@interface LCRadio()
+
+@property (nonatomic, strong) UIColor * gradientEnd;
+@property (nonatomic, strong) UIColor * stroke;
+@property (nonatomic, strong) UIColor * highlightedColor;
+
+@property (nonatomic, strong) UIColor * unckeckedColor;
+
+@end
 
 @implementation LCRadio
 
@@ -32,24 +45,9 @@
 
 - (void)setup
 {
-    [self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, 24, 24)];
-
-    NSString* selectedImageName = @"lcradio-selected";
-    NSString* unselectedImageName = @"lcradio-unselected";
-    if (![self isOnProjectResources])
-    {
-        selectedImageName = @"LasagnaCookiesBundle.bundle/lcradio-selected";
-        unselectedImageName = @"LasagnaCookiesBundle.bundle/lcradio-unselected";
-    }
-
-    UIImage * selectedImage = [UIImage imageNamed:selectedImageName];
-    UIImage * unselectedImage = [UIImage imageNamed:unselectedImageName];
-    
-    [self setBackgroundImage:selectedImage forState:UIControlStateSelected];
-    [self setBackgroundImage:selectedImage forState:UIControlStateHighlighted];
-    [self setBackgroundImage:unselectedImage forState:UIControlStateNormal];
+    [self initColors];
+    [self addObserver:self forKeyPath:@"highlighted" options:NSKeyValueObservingOptionNew context:NULL];
     [self addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchDown];
-    self.titleLabel.text = @"";
 }
 
 - (void)select:(id)sender
@@ -57,11 +55,85 @@
     self.selected = !self.selected;
 }
 
-- (BOOL)isOnProjectResources
+
+- (void)drawRect:(CGRect)rect
 {
-    if ([UIImage imageNamed:@"lcbutton"])
-        return YES;
-    return NO;
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self drawCircle:context inRect:rect];
+    CGContextFillPath(context);
 }
+
+- (void)setMainColor:(UIColor *)mainColor
+{
+    _mainColor = mainColor;
+    [self initColors];
+}
+
+- (void)initColors
+{
+    if (self.mainColor == nil)
+        self.mainColor = [UIColor colorWithHexa:[LCManager LCThemeColor]];
+    const CGFloat * components = CGColorGetComponents(self.mainColor.CGColor);
+    self.gradientEnd = [UIColor colorWithRed:(((components[0] * 255) - 10) / 255)
+                                       green:(((components[1] * 255) - 20) / 255)
+                                        blue:(((components[2] * 255) - 20) / 255)
+                                       alpha:1];
+    
+    self.stroke = [UIColor colorWithRed:(((components[0] * 255) - 60) / 255)
+                                  green:(((components[1] * 255) - 50) / 255)
+                                   blue:(((components[2] * 255) - 45) / 255)
+                                  alpha:1];
+    
+    self.highlightedColor = [UIColor colorWithRed:(((components[0] * 255) - 30) / 255)
+                                            green:(((components[1] * 255) - 50) / 255)
+                                             blue:(((components[2] * 255) - 30) / 255)
+                                            alpha:1];
+    self.unckeckedColor = [UIColor colorWithRed:211/255.f green:211/255.f blue:211/255.f alpha:1];
+}
+
+
+- (void)drawCircle:(CGContextRef)context inRect:(CGRect)rect
+{
+    CGRect newRect = CGRectMake(rect.origin.x + 1, rect.origin.y + 1, rect.size.width - 2, rect.size.height - 2);
+    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
+    CGContextSetAlpha(context, 1);
+    CGContextFillEllipseInRect(context, rect);
+
+    
+    CGContextSetLineWidth(context, CGRectGetWidth(newRect) / 20);
+    CGContextSetStrokeColorWithColor(context, self.unckeckedColor.CGColor);
+    CGContextStrokeEllipseInRect(context, newRect);
+    
+    float margin =  CGRectGetWidth(newRect) / 5.5f;
+    
+    if (self.isSelected)
+    {
+        CGRect centerCircle = CGRectMake(rect.origin.x + margin, rect.origin.y + margin, rect.size.width - (margin * 2), rect.size.height - margin * 2);
+        CGContextSetFillColorWithColor(context, self.mainColor.CGColor);
+        CGContextSetAlpha(context, 1);
+        CGContextFillEllipseInRect(context, centerCircle);
+        
+        CGContextSetLineWidth(context, CGRectGetWidth(newRect) / 20);
+        CGContextSetStrokeColorWithColor(context, self.stroke.CGColor);
+        CGContextStrokeEllipseInRect(context, centerCircle);
+    }
+    if (self.highlighted)
+    {
+        CGRect centerCircle = CGRectMake(rect.origin.x + margin, rect.origin.y + margin, rect.size.width - (margin * 2), rect.size.height - margin * 2);
+        CGContextSetFillColorWithColor(context, self.highlightedColor.CGColor);
+        CGContextSetAlpha(context, 1);
+        CGContextFillEllipseInRect(context, centerCircle);
+        
+        CGContextSetLineWidth(context, 1.5);
+        CGContextSetStrokeColorWithColor(context, self.stroke.CGColor);
+        CGContextStrokeEllipseInRect(context, centerCircle);
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    [self setNeedsDisplay];
+}
+
 
 @end

@@ -7,6 +7,16 @@
 //
 
 #import "LCTextField.h"
+#import "UIColor+hex.h"
+#import "LCManager.h"
+
+#import <QuartzCore/QuartzCore.h>
+
+@interface LCTextField()
+
+@property (nonatomic, strong) UIColor * unckeckedColor;
+
+@end
 
 @implementation LCTextField
 
@@ -32,29 +42,59 @@
 
 - (void)setup
 {
+    self.layer.cornerRadius = 3;
+    [self initColors];
     UIToolbar * numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
     numberToolbar.barStyle = UIBarStyleBlackTranslucent;
     numberToolbar.items = [NSArray arrayWithObjects:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],[[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneWithKeyboard)],
                            nil];
     [numberToolbar sizeToFit];
     self.inputAccessoryView = numberToolbar;
-  
-    CGRect frame = self.frame;
-    frame.size.height += 10;
-    self.frame = frame;
+}
 
-    NSString* textFieldImageName = @"lctextfield";
-    if (![self isOnProjectResources])
-    {
-        textFieldImageName = @"LasagnaCookiesBundle.bundle/lctextfield";
-    }
-    
-    UIImage *buttonImage = [[UIImage imageNamed:textFieldImageName] resizableImageWithCapInsets:UIEdgeInsetsMake(20, 20, 20, 20)];
-    [self setBackground:buttonImage];
-    [self setBorderStyle:UITextBorderStyleNone];
-    self.textColor = [UIColor colorWithRed:245/255.f green:122/255.f blue:89/255.f alpha:1];
+- (void)initColors
+{
+    if (self.mainColor == nil)
+        self.mainColor = [UIColor colorWithHexa:[LCManager LCThemeColor]];
+    //self.textColor = self.mainColor;
     self.font = [UIFont boldSystemFontOfSize:14];
-    [[self valueForKey:@"textInputTraits"] setValue:[UIColor colorWithRed:245/255.f green:122/255.f blue:89/255.f alpha:1]forKey:@"insertionPointColor"];
+    self.unckeckedColor = [UIColor colorWithHexa:0xA8A8A8];
+}
+
+
+- (void)drawRect:(CGRect)rect
+{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+   
+    if (self.layer.cornerRadius == 0)
+    {
+        CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
+        CGContextSetAlpha(context, 1);
+        CGContextSetShadow(context, CGSizeMake(0, 0), 2);
+        CGContextFillRect(context, rect);
+        
+        CGContextSetLineWidth(context, 1.5);
+        CGContextSetStrokeColorWithColor(context, self.unckeckedColor.CGColor);
+        CGContextStrokeRect(context, rect);
+        CGContextFillPath(context);
+    }
+    else
+    {
+        UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:self.layer.cornerRadius];
+        CGContextSetStrokeColorWithColor(context, self.unckeckedColor.CGColor);
+        CGContextSetShadow(context, CGSizeMake(0, 0), 2);
+        CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
+        CGContextSaveGState(context);
+        [path setLineWidth:1.5];
+        [path fill];
+        [path addClip];
+        [path stroke];
+    }
+}
+
+- (void)doneWithKeyboard
+{
+    [self resignFirstResponder];
 }
 
 - (CGRect)textRectForBounds:(CGRect)bounds
@@ -67,16 +107,5 @@
     return CGRectInset(bounds, 10, 0);
 }
 
-- (void)doneWithKeyboard
-{
-    [self resignFirstResponder];
-}
-
-- (BOOL)isOnProjectResources
-{
-    if ([UIImage imageNamed:@"lcbutton"])
-        return YES;
-    return NO;
-}
 
 @end
