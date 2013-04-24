@@ -49,6 +49,7 @@
     [self setTitleShadowColor:[[UIColor blackColor] colorWithAlphaComponent:0.36] forState:UIControlStateNormal];
     [self setTitleShadowColor:[[UIColor blackColor] colorWithAlphaComponent:0.36] forState:UIControlStateHighlighted];
     self.titleLabel.shadowOffset = CGSizeMake(0, -1);
+    self.layer.cornerRadius = 3;
 }
 
 - (void)setMainColor:(UIColor *)mainColor
@@ -82,40 +83,46 @@
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     if (self.state != UIControlStateHighlighted)
-        drawLinearGradient(context, rect, self.mainColor.CGColor, self.gradientEnd.CGColor);
+        [self drawLinearGradient:context inRect:rect withStartColor:self.mainColor.CGColor withEndColor:self.gradientEnd.CGColor];
     else
-        drawLinearGradient(context, rect, self.highlightedColor.CGColor, self.gradientEnd.CGColor);
- 
-    
-    CGRect strokeRect = CGRectInset(rect, 0, 0);
-    CGContextSetStrokeColorWithColor(context, self.stroke.CGColor);
-    CGContextSetLineWidth(context, 2.0);
-    CGContextStrokeRect(context, strokeRect);
-    
+        [self drawLinearGradient:context inRect:rect withStartColor:self.highlightedColor.CGColor withEndColor:self.gradientEnd.CGColor];    
     CGContextFillPath(context);
 }
 
-void drawLinearGradient(CGContextRef context, CGRect rect, CGColorRef startColor, CGColorRef endColor)
+- (void)drawLinearGradient:(CGContextRef)context inRect:(CGRect)rect withStartColor:(CGColorRef)startColor
+              withEndColor:(CGColorRef) endColor
 {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGFloat locations[] = { 0.0, 1.0 };
     
-    NSArray *colors = @[(__bridge id) startColor, (__bridge id) endColor];
+    NSArray * colors = @[(__bridge id) startColor, (__bridge id) endColor];
     
     CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef) colors, locations);
     CGPoint startPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMinY(rect));
     CGPoint endPoint = CGPointMake(CGRectGetMidX(rect), CGRectGetMaxY(rect));
-    
-    CGContextAddRect(context, rect);
-    CGContextSaveGState(context);
-    
-    CGContextClip(context);
-    CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0);
-    CGContextRestoreGState(context);
-    
+    if (self.layer.cornerRadius == 0)
+    {
+        CGContextAddRect(context, rect);
+        CGContextSetStrokeColorWithColor(context, self.stroke.CGColor);
+        CGContextSetLineWidth(context, 1.5);
+        CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0);
+        CGContextStrokeRect(context, rect);
+    }
+    else
+    {
+        UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:self.layer.cornerRadius];
+        CGContextSetStrokeColorWithColor(context, self.stroke.CGColor);
+        CGContextSaveGState(context);
+        [path setLineWidth:1.5];
+        [path fill];
+        [path addClip];
+        CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0);
+        [path stroke];
+    }
     CGGradientRelease(gradient);
     CGColorSpaceRelease(colorSpace);
 }
+
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {

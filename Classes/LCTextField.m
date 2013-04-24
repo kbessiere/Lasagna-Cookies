@@ -7,6 +7,7 @@
 //
 
 #import "LCTextField.h"
+#import "UIColor+hex.h"
 
 @interface LCTextField()
 
@@ -53,7 +54,7 @@
         self.mainColor = [UIColor colorWithRed:245/255.f green:122/255.f blue:89/255.f alpha:1];
     self.textColor = self.mainColor;
     self.font = [UIFont boldSystemFontOfSize:14];
-    self.unckeckedColor = [UIColor colorWithRed:211/255.f green:211/255.f blue:211/255.f alpha:1];
+    self.unckeckedColor = [UIColor colorWithHexa:0xA8A8A8];
 }
 
 
