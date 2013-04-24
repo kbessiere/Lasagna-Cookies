@@ -8,6 +8,9 @@
 
 #import "LCTextField.h"
 #import "UIColor+hex.h"
+#import "LCManager.h"
+
+#import <QuartzCore/QuartzCore.h>
 
 @interface LCTextField()
 
@@ -39,6 +42,7 @@
 
 - (void)setup
 {
+    self.layer.cornerRadius = 3;
     [self initColors];
     UIToolbar * numberToolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 50)];
     numberToolbar.barStyle = UIBarStyleBlackTranslucent;
@@ -51,7 +55,7 @@
 - (void)initColors
 {
     if (self.mainColor == nil)
-        self.mainColor = [UIColor colorWithRed:245/255.f green:122/255.f blue:89/255.f alpha:1];
+        self.mainColor = [UIColor colorWithHexa:[LCManager LCThemeColor]];
     self.textColor = self.mainColor;
     self.font = [UIFont boldSystemFontOfSize:14];
     self.unckeckedColor = [UIColor colorWithHexa:0xA8A8A8];
@@ -62,15 +66,30 @@
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
    
-    CGContextAddRect(context, rect);
-    CGContextSetShadow(context, CGSizeMake(0, 0), 2);
-    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
-    CGContextFillPath(context);
-    
-    CGContextSetLineWidth(context, 2);
-    CGContextSetStrokeColorWithColor(context, self.unckeckedColor.CGColor);
-    CGContextStrokeRect(context, rect);
-    CGContextFillPath(context);
+    if (self.layer.cornerRadius == 0)
+    {
+        CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
+        CGContextSetAlpha(context, 1);
+        CGContextSetShadow(context, CGSizeMake(0, 0), 2);
+        CGContextFillRect(context, rect);
+        
+        CGContextSetLineWidth(context, 1.5);
+        CGContextSetStrokeColorWithColor(context, self.unckeckedColor.CGColor);
+        CGContextStrokeRect(context, rect);
+        CGContextFillPath(context);
+    }
+    else
+    {
+        UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:self.layer.cornerRadius];
+        CGContextSetStrokeColorWithColor(context, self.unckeckedColor.CGColor);
+        CGContextSetShadow(context, CGSizeMake(0, 0), 2);
+        CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
+        CGContextSaveGState(context);
+        [path setLineWidth:1.5];
+        [path fill];
+        [path addClip];
+        [path stroke];
+    }
 }
 
 - (void)doneWithKeyboard

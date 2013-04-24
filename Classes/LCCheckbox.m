@@ -7,6 +7,10 @@
 //
 
 #import "LCCheckbox.h"
+#import "LCManager.h"
+#import "UIColor+hex.h"
+
+#import <QuartzCore/QuartzCore.h>
 
 @interface LCCheckbox()
 
@@ -48,7 +52,7 @@
 - (void)initColors
 {
     if (self.mainColor == nil)
-        self.mainColor = [UIColor colorWithRed:245/255.f green:122/255.f blue:89/255.f alpha:1];
+        self.mainColor = [UIColor colorWithHexa:[LCManager LCThemeColor]];
     const CGFloat * components = CGColorGetComponents(self.mainColor.CGColor);
     self.gradientEnd = [UIColor colorWithRed:(((components[0] * 255) - 10) / 255)
                                        green:(((components[1] * 255) - 20) / 255)
@@ -69,6 +73,7 @@
 
 - (void)setup
 {
+    self.layer.cornerRadius = 4;
     [self initColors];
     [self addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchDown];
     [self addObserver:self forKeyPath:@"highlighted" options:NSKeyValueObservingOptionNew context:NULL];
@@ -85,38 +90,11 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     if (self.isSelected)
-    {
-        CGContextSetFillColorWithColor(context, self.mainColor.CGColor);
-        CGContextSetAlpha(context, 1);
-        CGContextFillRect(context, rect);
-
-        CGContextSetLineWidth(context, CGRectGetWidth(rect) / 10);
-        CGContextSetStrokeColorWithColor(context, self.stroke.CGColor);
-        CGContextStrokeRect(context, rect);
-        [self drawValidateSymbole:context inRect:rect];
-    }
+        [self drawCheckBox:context inRect:rect withColor:self.mainColor.CGColor andStrokeColor:self.stroke.CGColor];
     else if (self.highlighted)
-    {
-        CGContextSetFillColorWithColor(context, self.highlightedColor.CGColor);
-        CGContextSetAlpha(context, 1);
-        CGContextFillRect(context, rect);
-        
-        CGContextSetLineWidth(context, CGRectGetWidth(rect) / 10);
-        CGContextSetStrokeColorWithColor(context, self.stroke.CGColor);
-        CGContextStrokeRect(context, rect);
-        [self drawValidateSymbole:context inRect:rect];
-    }
+        [self drawCheckBox:context inRect:rect withColor:self.highlightedColor.CGColor andStrokeColor:self.stroke.CGColor];
     else
-    {
-        CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
-        CGContextSetAlpha(context, 1);
-        CGContextFillRect(context, rect);
-
-        CGContextSetLineWidth(context, CGRectGetWidth(rect) / 10);
-        CGContextSetStrokeColorWithColor(context, self.unckeckedColor.CGColor);
-        CGContextStrokeRect(context, rect);
-    }
-    CGContextFillPath(context);
+        [self drawCheckBox:context inRect:rect withColor:[UIColor whiteColor].CGColor andStrokeColor:self.unckeckedColor.CGColor];
 }
 
 - (void)drawValidateSymbole:(CGContextRef)context inRect:(CGRect)rect
@@ -132,6 +110,37 @@
     CGContextAddLineToPoint(context, CGRectGetWidth(rect) * 0.20f, CGRectGetHeight(rect) * 0.56f);
     
     CGContextStrokePath(context);
+}
+
+- (void)drawCheckBox:(CGContextRef)context inRect:(CGRect)rect withColor:(CGColorRef)color andStrokeColor:(CGColorRef)strokeColor
+{
+    if (self.layer.cornerRadius == 0)
+    {
+        CGContextSetFillColorWithColor(context, color);
+        CGContextSetAlpha(context, 1);
+        CGContextFillRect(context, rect);
+        
+        CGContextSetLineWidth(context, CGRectGetWidth(rect) / 10);
+        CGContextSetStrokeColorWithColor(context, strokeColor);
+        CGContextStrokeRect(context, rect);
+        if (self.selected || self.highlighted)
+            [self drawValidateSymbole:context inRect:rect];
+        
+        CGContextFillPath(context);
+    }
+    else
+    {
+        UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:self.layer.cornerRadius];
+        CGContextSetStrokeColorWithColor(context, strokeColor);
+        CGContextSetFillColorWithColor(context, color);
+        CGContextSaveGState(context);
+        [path setLineWidth:CGRectGetWidth(rect) / 10];
+        [path fill];
+        [path addClip];
+        [path stroke];
+        if (self.selected || self.highlighted)
+            [self drawValidateSymbole:context inRect:rect];
+    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context

@@ -8,6 +8,8 @@
 
 #import "LCRadio.h"
 #import "UIColor+hex.h"
+#import "LCManager.h"
+#import "UIColor+hex.h"
 
 @interface LCRadio()
 
@@ -70,7 +72,7 @@
 - (void)initColors
 {
     if (self.mainColor == nil)
-        self.mainColor = [UIColor colorWithRed:245/255.f green:122/255.f blue:89/255.f alpha:1];
+        self.mainColor = [UIColor colorWithHexa:[LCManager LCThemeColor]];
     const CGFloat * components = CGColorGetComponents(self.mainColor.CGColor);
     self.gradientEnd = [UIColor colorWithRed:(((components[0] * 255) - 10) / 255)
                                        green:(((components[1] * 255) - 20) / 255)

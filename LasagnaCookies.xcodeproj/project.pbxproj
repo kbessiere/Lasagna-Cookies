@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C7491DE1721DC51004F4DFA /* UIColor+hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7491DD1721DC51004F4DFA /* UIColor+hex.m */; };
+		3C79C5AA17287F4100AFE234 /* LCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C79C5A917287F4100AFE234 /* LCManager.m */; };
 		3C8B5C8D171F0DCF008FBB9D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8B5C8C171F0DCF008FBB9D /* UIKit.framework */; };
 		3C8B5C8F171F0DCF008FBB9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8B5C8E171F0DCF008FBB9D /* Foundation.framework */; };
 		3C8B5C91171F0DCF008FBB9D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8B5C90171F0DCF008FBB9D /* CoreGraphics.framework */; };
@@ -17,25 +18,8 @@
 		3C8B5CC9171F0E58008FBB9D /* LCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8B5CC0171F0E58008FBB9D /* LCButton.m */; };
 		3C8B5CCA171F0E58008FBB9D /* LCCheckbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8B5CC2171F0E58008FBB9D /* LCCheckbox.m */; };
 		3C8B5CCB171F0E58008FBB9D /* LCRadio.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8B5CC4171F0E58008FBB9D /* LCRadio.m */; };
-		3C8B5CCC171F0E58008FBB9D /* LCTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8B5CC6171F0E58008FBB9D /* LCTag.m */; };
 		3C8B5CCD171F0E58008FBB9D /* LCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8B5CC8171F0E58008FBB9D /* LCTextField.m */; };
 		3C8B5D17171F1853008FBB9D /* LCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8B5CA7171F0DCF008FBB9D /* LCViewController.xib */; };
-		3C9AB72C171FE37E00A725E3 /* lctextfield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB70C171FDFC000A725E3 /* lctextfield@2x.png */; };
-		3C9AB72D171FE37E00A725E3 /* lctextfield.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB70D171FDFC000A725E3 /* lctextfield.png */; };
-		3C9AB72E171FE37E00A725E3 /* lctag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB70E171FDFC000A725E3 /* lctag@2x.png */; };
-		3C9AB72F171FE37E00A725E3 /* lctag.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB70F171FDFC000A725E3 /* lctag.png */; };
-		3C9AB730171FE37E00A725E3 /* lcradio-unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB710171FDFC000A725E3 /* lcradio-unselected@2x.png */; };
-		3C9AB731171FE37E00A725E3 /* lcradio-unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB711171FDFC000A725E3 /* lcradio-unselected.png */; };
-		3C9AB732171FE37E00A725E3 /* lcradio-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB712171FDFC000A725E3 /* lcradio-selected@2x.png */; };
-		3C9AB733171FE37E00A725E3 /* lcradio-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB713171FDFC000A725E3 /* lcradio-selected.png */; };
-		3C9AB734171FE37E00A725E3 /* lccheckbox-unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB714171FDFC000A725E3 /* lccheckbox-unselected@2x.png */; };
-		3C9AB735171FE37E00A725E3 /* lccheckbox-unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB715171FDFC000A725E3 /* lccheckbox-unselected.png */; };
-		3C9AB736171FE37E00A725E3 /* lccheckbox-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB716171FDFC000A725E3 /* lccheckbox-selected@2x.png */; };
-		3C9AB737171FE37E00A725E3 /* lccheckbox-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB717171FDFC000A725E3 /* lccheckbox-selected.png */; };
-		3C9AB738171FE37E00A725E3 /* lcbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB718171FDFC000A725E3 /* lcbutton@2x.png */; };
-		3C9AB739171FE37E00A725E3 /* lcbutton-highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB719171FDFC000A725E3 /* lcbutton-highlighted@2x.png */; };
-		3C9AB73A171FE37E00A725E3 /* lcbutton-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB71A171FDFC000A725E3 /* lcbutton-highlighted.png */; };
-		3C9AB73B171FE37E00A725E3 /* lcbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C9AB71B171FDFC000A725E3 /* lcbutton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +35,8 @@
 /* Begin PBXFileReference section */
 		3C7491DC1721DC51004F4DFA /* UIColor+hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+hex.h"; path = "Classes/UIColor+hex.h"; sourceTree = SOURCE_ROOT; };
 		3C7491DD1721DC51004F4DFA /* UIColor+hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+hex.m"; path = "Classes/UIColor+hex.m"; sourceTree = SOURCE_ROOT; };
+		3C79C5A817287F4100AFE234 /* LCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCManager.h; path = Classes/LCManager.h; sourceTree = SOURCE_ROOT; };
+		3C79C5A917287F4100AFE234 /* LCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCManager.m; path = Classes/LCManager.m; sourceTree = SOURCE_ROOT; };
 		3C8B5C89171F0DCF008FBB9D /* LasagnaCookies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LasagnaCookies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C8B5C8C171F0DCF008FBB9D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3C8B5C8E171F0DCF008FBB9D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -73,8 +59,6 @@
 		3C8B5CC2171F0E58008FBB9D /* LCCheckbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCCheckbox.m; path = Classes/LCCheckbox.m; sourceTree = SOURCE_ROOT; };
 		3C8B5CC3171F0E58008FBB9D /* LCRadio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCRadio.h; path = Classes/LCRadio.h; sourceTree = SOURCE_ROOT; };
 		3C8B5CC4171F0E58008FBB9D /* LCRadio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCRadio.m; path = Classes/LCRadio.m; sourceTree = SOURCE_ROOT; };
-		3C8B5CC5171F0E58008FBB9D /* LCTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCTag.h; path = Classes/LCTag.h; sourceTree = SOURCE_ROOT; };
-		3C8B5CC6171F0E58008FBB9D /* LCTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCTag.m; path = Classes/LCTag.m; sourceTree = SOURCE_ROOT; };
 		3C8B5CC7171F0E58008FBB9D /* LCTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCTextField.h; path = Classes/LCTextField.h; sourceTree = SOURCE_ROOT; };
 		3C8B5CC8171F0E58008FBB9D /* LCTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCTextField.m; path = Classes/LCTextField.m; sourceTree = SOURCE_ROOT; };
 		3C8B5CF3171F1116008FBB9D /* LasagnaCookiesBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LasagnaCookiesBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,22 +66,6 @@
 		3C8B5CF8171F1116008FBB9D /* LasagnaCookiesBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LasagnaCookiesBundle-Info.plist"; sourceTree = "<group>"; };
 		3C8B5CFA171F1116008FBB9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3C8B5CFC171F1116008FBB9D /* LasagnaCookiesBundle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LasagnaCookiesBundle-Prefix.pch"; sourceTree = "<group>"; };
-		3C9AB70C171FDFC000A725E3 /* lctextfield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lctextfield@2x.png"; path = "Ressources/lctextfield@2x.png"; sourceTree = SOURCE_ROOT; };
-		3C9AB70D171FDFC000A725E3 /* lctextfield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lctextfield.png; path = Ressources/lctextfield.png; sourceTree = SOURCE_ROOT; };
-		3C9AB70E171FDFC000A725E3 /* lctag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lctag@2x.png"; path = "Ressources/lctag@2x.png"; sourceTree = SOURCE_ROOT; };
-		3C9AB70F171FDFC000A725E3 /* lctag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lctag.png; path = Ressources/lctag.png; sourceTree = SOURCE_ROOT; };
-		3C9AB710171FDFC000A725E3 /* lcradio-unselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lcradio-unselected@2x.png"; path = "Ressources/lcradio-unselected@2x.png"; sourceTree = SOURCE_ROOT; };
-		3C9AB711171FDFC000A725E3 /* lcradio-unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lcradio-unselected.png"; path = "Ressources/lcradio-unselected.png"; sourceTree = SOURCE_ROOT; };
-		3C9AB712171FDFC000A725E3 /* lcradio-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lcradio-selected@2x.png"; path = "Ressources/lcradio-selected@2x.png"; sourceTree = SOURCE_ROOT; };
-		3C9AB713171FDFC000A725E3 /* lcradio-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lcradio-selected.png"; path = "Ressources/lcradio-selected.png"; sourceTree = SOURCE_ROOT; };
-		3C9AB714171FDFC000A725E3 /* lccheckbox-unselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lccheckbox-unselected@2x.png"; path = "Ressources/lccheckbox-unselected@2x.png"; sourceTree = SOURCE_ROOT; };
-		3C9AB715171FDFC000A725E3 /* lccheckbox-unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lccheckbox-unselected.png"; path = "Ressources/lccheckbox-unselected.png"; sourceTree = SOURCE_ROOT; };
-		3C9AB716171FDFC000A725E3 /* lccheckbox-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lccheckbox-selected@2x.png"; path = "Ressources/lccheckbox-selected@2x.png"; sourceTree = SOURCE_ROOT; };
-		3C9AB717171FDFC000A725E3 /* lccheckbox-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lccheckbox-selected.png"; path = "Ressources/lccheckbox-selected.png"; sourceTree = SOURCE_ROOT; };
-		3C9AB718171FDFC000A725E3 /* lcbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lcbutton@2x.png"; path = "Ressources/lcbutton@2x.png"; sourceTree = SOURCE_ROOT; };
-		3C9AB719171FDFC000A725E3 /* lcbutton-highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lcbutton-highlighted@2x.png"; path = "Ressources/lcbutton-highlighted@2x.png"; sourceTree = SOURCE_ROOT; };
-		3C9AB71A171FDFC000A725E3 /* lcbutton-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lcbutton-highlighted.png"; path = "Ressources/lcbutton-highlighted.png"; sourceTree = SOURCE_ROOT; };
-		3C9AB71B171FDFC000A725E3 /* lcbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lcbutton.png; path = Ressources/lcbutton.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				3C7491DF1721FE3F004F4DFA /* Categories */,
-				3C8B5CCE171F0E5E008FBB9D /* Ressources */,
 				3C8B5CAF171F0DD8008FBB9D /* Classes */,
 				3C8B5C9B171F0DCF008FBB9D /* LCAppDelegate.h */,
 				3C8B5C9C171F0DCF008FBB9D /* LCAppDelegate.m */,
@@ -199,35 +166,12 @@
 				3C8B5CC2171F0E58008FBB9D /* LCCheckbox.m */,
 				3C8B5CC3171F0E58008FBB9D /* LCRadio.h */,
 				3C8B5CC4171F0E58008FBB9D /* LCRadio.m */,
-				3C8B5CC5171F0E58008FBB9D /* LCTag.h */,
-				3C8B5CC6171F0E58008FBB9D /* LCTag.m */,
 				3C8B5CC7171F0E58008FBB9D /* LCTextField.h */,
 				3C8B5CC8171F0E58008FBB9D /* LCTextField.m */,
+				3C79C5A817287F4100AFE234 /* LCManager.h */,
+				3C79C5A917287F4100AFE234 /* LCManager.m */,
 			);
 			name = Classes;
-			sourceTree = "<group>";
-		};
-		3C8B5CCE171F0E5E008FBB9D /* Ressources */ = {
-			isa = PBXGroup;
-			children = (
-				3C9AB70C171FDFC000A725E3 /* lctextfield@2x.png */,
-				3C9AB70D171FDFC000A725E3 /* lctextfield.png */,
-				3C9AB70E171FDFC000A725E3 /* lctag@2x.png */,
-				3C9AB70F171FDFC000A725E3 /* lctag.png */,
-				3C9AB710171FDFC000A725E3 /* lcradio-unselected@2x.png */,
-				3C9AB711171FDFC000A725E3 /* lcradio-unselected.png */,
-				3C9AB712171FDFC000A725E3 /* lcradio-selected@2x.png */,
-				3C9AB713171FDFC000A725E3 /* lcradio-selected.png */,
-				3C9AB714171FDFC000A725E3 /* lccheckbox-unselected@2x.png */,
-				3C9AB715171FDFC000A725E3 /* lccheckbox-unselected.png */,
-				3C9AB716171FDFC000A725E3 /* lccheckbox-selected@2x.png */,
-				3C9AB717171FDFC000A725E3 /* lccheckbox-selected.png */,
-				3C9AB718171FDFC000A725E3 /* lcbutton@2x.png */,
-				3C9AB719171FDFC000A725E3 /* lcbutton-highlighted@2x.png */,
-				3C9AB71A171FDFC000A725E3 /* lcbutton-highlighted.png */,
-				3C9AB71B171FDFC000A725E3 /* lcbutton.png */,
-			);
-			name = Ressources;
 			sourceTree = "<group>";
 		};
 		3C8B5CF6171F1116008FBB9D /* LasagnaCookiesBundle */ = {
@@ -327,22 +271,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C9AB72C171FE37E00A725E3 /* lctextfield@2x.png in Resources */,
-				3C9AB72D171FE37E00A725E3 /* lctextfield.png in Resources */,
-				3C9AB72E171FE37E00A725E3 /* lctag@2x.png in Resources */,
-				3C9AB72F171FE37E00A725E3 /* lctag.png in Resources */,
-				3C9AB730171FE37E00A725E3 /* lcradio-unselected@2x.png in Resources */,
-				3C9AB731171FE37E00A725E3 /* lcradio-unselected.png in Resources */,
-				3C9AB732171FE37E00A725E3 /* lcradio-selected@2x.png in Resources */,
-				3C9AB733171FE37E00A725E3 /* lcradio-selected.png in Resources */,
-				3C9AB734171FE37E00A725E3 /* lccheckbox-unselected@2x.png in Resources */,
-				3C9AB735171FE37E00A725E3 /* lccheckbox-unselected.png in Resources */,
-				3C9AB736171FE37E00A725E3 /* lccheckbox-selected@2x.png in Resources */,
-				3C9AB737171FE37E00A725E3 /* lccheckbox-selected.png in Resources */,
-				3C9AB738171FE37E00A725E3 /* lcbutton@2x.png in Resources */,
-				3C9AB739171FE37E00A725E3 /* lcbutton-highlighted@2x.png in Resources */,
-				3C9AB73A171FE37E00A725E3 /* lcbutton-highlighted.png in Resources */,
-				3C9AB73B171FE37E00A725E3 /* lcbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,9 +287,9 @@
 				3C8B5CC9171F0E58008FBB9D /* LCButton.m in Sources */,
 				3C8B5CCA171F0E58008FBB9D /* LCCheckbox.m in Sources */,
 				3C8B5CCB171F0E58008FBB9D /* LCRadio.m in Sources */,
-				3C8B5CCC171F0E58008FBB9D /* LCTag.m in Sources */,
 				3C8B5CCD171F0E58008FBB9D /* LCTextField.m in Sources */,
 				3C7491DE1721DC51004F4DFA /* UIColor+hex.m in Sources */,
+				3C79C5AA17287F4100AFE234 /* LCManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
