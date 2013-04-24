@@ -8,6 +8,8 @@
 
 #import "LCViewController.h"
 #import "UIColor+hex.h"
+#import "LCManager.h"
+
 #import <QuartzCore/QuartzCore.h>
 
 @interface LCViewController ()
@@ -22,7 +24,9 @@
     
     textfield.layer.cornerRadius = 0;
     
+    // Set a different color for the button
 	button1.mainColor = [UIColor colorWithHexa:0x3CB5B5];
+    // Set a different corner radius
     button1.layer.cornerRadius = 0;
 
     button2.mainColor = [UIColor colorWithHexa:0x00A1CB];

@@ -56,7 +56,7 @@
 {
     if (self.mainColor == nil)
         self.mainColor = [UIColor colorWithHexa:[LCManager LCThemeColor]];
-    self.textColor = self.mainColor;
+    //self.textColor = self.mainColor;
     self.font = [UIFont boldSystemFontOfSize:14];
     self.unckeckedColor = [UIColor colorWithHexa:0xA8A8A8];
 }
