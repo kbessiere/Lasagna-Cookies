@@ -43,6 +43,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"highlighted"];
+}
+
 - (void)setMainColor:(UIColor *)mainColor
 {
     _mainColor = mainColor;
@@ -75,7 +80,6 @@
 {
     self.layer.cornerRadius = 4;
     [self initColors];
-    [self addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchDown];
     [self addObserver:self forKeyPath:@"highlighted" options:NSKeyValueObservingOptionNew context:NULL];
 }
 

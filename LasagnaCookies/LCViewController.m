@@ -37,6 +37,7 @@
     
     checkbox1.mainColor = [UIColor colorWithHexa:0x97CCEE];
     checkbox1.layer.cornerRadius = 0;
+
     
     checkbox2.mainColor = [UIColor colorWithHexa:0x98C73D];
     
@@ -44,13 +45,24 @@
     radio1.mainColor = [UIColor colorWithHexa:0xFFD843];
     radio2.mainColor = [UIColor colorWithHexa:0xCDE8D5];
     radio3.mainColor = [UIColor colorWithHexa:0xFCA44B];
-    
+
+    [checkbox1 addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchDown];
+    [checkbox2 addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchDown];
+    [radio1 addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchDown];
+    [radio2 addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchDown];
+    [radio3 addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchDown];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)select:(id)sender
+{
+    UIButton * button = sender;
+    button.selected = !button.selected;
 }
 
 @end

@@ -40,6 +40,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"highlighted"];
+}
+
 - (void)setup
 {
     [self initColors];

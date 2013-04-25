@@ -43,18 +43,16 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"highlighted"];
+}
+
 - (void)setup
 {
     [self initColors];
     [self addObserver:self forKeyPath:@"highlighted" options:NSKeyValueObservingOptionNew context:NULL];
-    [self addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchDown];
 }
-
-- (void)select:(id)sender
-{
-    self.selected = !self.selected;
-}
-
 
 - (void)drawRect:(CGRect)rect
 {
