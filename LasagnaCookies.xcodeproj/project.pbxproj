@@ -20,6 +20,7 @@
 		3C8B5CCB171F0E58008FBB9D /* LCRadio.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8B5CC4171F0E58008FBB9D /* LCRadio.m */; };
 		3C8B5CCD171F0E58008FBB9D /* LCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8B5CC8171F0E58008FBB9D /* LCTextField.m */; };
 		3C8B5D17171F1853008FBB9D /* LCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C8B5CA7171F0DCF008FBB9D /* LCViewController.xib */; };
+		3CAACB1417292983004F031D /* LCTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAACB1317292983004F031D /* LCTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		3C8B5CF8171F1116008FBB9D /* LasagnaCookiesBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LasagnaCookiesBundle-Info.plist"; sourceTree = "<group>"; };
 		3C8B5CFA171F1116008FBB9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3C8B5CFC171F1116008FBB9D /* LasagnaCookiesBundle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LasagnaCookiesBundle-Prefix.pch"; sourceTree = "<group>"; };
+		3CAACB1217292983004F031D /* LCTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCTextView.h; path = Classes/LCTextView.h; sourceTree = SOURCE_ROOT; };
+		3CAACB1317292983004F031D /* LCTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LCTextView.m; path = Classes/LCTextView.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +165,8 @@
 				3C8B5CC8171F0E58008FBB9D /* LCTextField.m */,
 				3C79C5A817287F4100AFE234 /* LCManager.h */,
 				3C79C5A917287F4100AFE234 /* LCManager.m */,
+				3CAACB1217292983004F031D /* LCTextView.h */,
+				3CAACB1317292983004F031D /* LCTextView.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				3C8B5CCD171F0E58008FBB9D /* LCTextField.m in Sources */,
 				3C7491DE1721DC51004F4DFA /* UIColor+hex.m in Sources */,
 				3C79C5AA17287F4100AFE234 /* LCManager.m in Sources */,
+				3CAACB1417292983004F031D /* LCTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
